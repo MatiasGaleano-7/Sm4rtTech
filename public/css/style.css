@@ -1,0 +1,42 @@
+/* Aca importan los archivos css de las diferentes paginas que hagan */
+@import url("header.css");
+@import url('home.css');
+@import url("footer.css");
+@import url("header-formularios.css");
+@import url("login.css");
+@import url("register.css");
+@import url("forms.css");
+@import url("carritoDeCompra.css");
+@import url("detalleProducto.css");
+@import url("agregar.css");
+@import url("editar.css");
+@import url("headerAdmin.css");
+@import url("navAdmin.css");
+@import url("indexAdmin.css");
+@import url("inicioAdmin.css");
+@import url("formsAdmin.css");
+@import url("products.css");
+@import url("productAdmin.css");
+@import url("filtroEditar.css");
+@import url("listadoProductos.css");
+@import url("error404.css");
+@import url("userProfile.css");
+@import url("profile.css");
+@import url("team.css");
+@import url("sobreNosotros.css");
+
+/* Paleta de colores */
+:root {
+    --greenWater : #00A99D;
+    --darkWaterGreen : #216965;
+    --lightBlue : #1E55E0;
+    --darkGrey : #2F2F2F;
+    --grey : #C4C4C4;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

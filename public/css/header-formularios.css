@@ -1,0 +1,15 @@
+.header-formularios {
+    background-color: #2F2F2F;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.header-formularios .logo{
+    align-items: center;
+    text-align: center;
+}
+.header-formularios .logo img {
+    width: 60%;
+   margin: 10px;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("partials/head.ejs") %>
+<body>
+    <%- include("partials/header.ejs") %> 
+    <nav class="second-bar-desktop">
+        <p> mi carrito <i class="fas fa-shopping-cart"></i></p>
+    </nav>
+    <nav class="second-bar">
+        <i class="fa fa-heart" onclick="dropMenu()"> (<input type="tel" name="" value="0" id="">)</i>
+        <i class="fas fa-shopping-cart" onclick="dropMenu()"> (<input type="tel" name="" value="0" id="">)</i>
+    </nav>
+    <div class="cuerpo">
+        
+
+        <!-- PRODUCTOS-DESKTOP -->
+        <!--  -->
+        <section class="productos-desktop">
+            <article class="producto">
+                <div  class="imagen">
+                    <img src="/images/carritoDeCompra/tablet.jpg" alt="">
+                    <h5><a href="/products">Ver productos similares</a></h5>
+                </div>
+                <div class="nombre">
+                    <h3>Tablet Toshiba 32gb 18"</h3>
+                </div>
+                <div class="cantidad">
+                    <div class="counter">
+                        <button type="button" class="btn-subtract">
+                            -
+                        </button>
+                        <div id="count">1</div>    
+                        <button type="button" class="btn-add">
+                            +
+                        </button>
+                    </div>
+                </div>
+                <div class="precio">
+                    <p>
+                        <h4>precio</h4>
+                        <h3>$18.000</h3>
+                    </p>
+                </div>
+                <a href="">Eliminar</a>
+            </article>
+            <article class="producto">
+                <div class="imagen">
+                    <img src="/images/carritoDeCompra/notebook.jpg" alt="">
+                    <h5><a href="/products">Ver productos similares</a></h5>
+                </div>
+                <div class="nombre">
+                <h3>Notebook Lenovo 14" Core i5 4GB 500GB</h3>
+                </div>
+                <div class="cantidad">
+                    <div class="counter">
+                        <button type="button" class="btn-subtract">
+                            -
+                        </button>
+                        <div id="count">1</div>    
+                        <button type="button" id="btn-add">
+                            +
+                        </button>
+                    </div>
+                </div>
+                <div class="precio">
+                <p>
+                    <h4>precio</h4>
+                    <h3>$55.000</h3>
+                </p>
+                </div>
+                <div class="enlaces-producto">
+                <a href="">Eliminar</a>
+            </article>
+            <article class="producto">
+                <div class="imagen">
+                    <img src="/images/carritoDeCompra/celular.jpg" alt="">
+                    <h5><a href="/products">Ver productos similares</a></h5>
+                </div>
+                <div class="nombre">
+                <h3>Celular Galaxy A51 128GB Blanco</h3>
+                </div>
+                <div class="cantidad">
+                    <div class="counter">
+                        <button type="button" class="btn-subtract" onclick="subtract();">
+                            -
+                        </button>
+                        <div id="count4" class="cant">1</div>    
+                        <button type="button" id="btn-add" onclick="add();">
+                            +
+                        </button>
+                    </div>
+                </div>
+                <div class="precio">
+                <p>
+                    <h4>precio</h4>
+                    <h3>$45.000</h3>
+                </p>
+                </div>
+                <a href="">Eliminar</a>
+            </article>
+        </section>
+    </div>
+
+
+    <div class="box-compra">
+        <div class="botones">
+            <button class="boton1"><a href="">continuar COMPRANDO</a></button>
+            <button class="boton2"><a href="">FINALIZAR LA COMPRA</a></button>
+        </div>
+        <div class="precio-total">
+            <div class="total-compra">
+                <h2>total de compra</h2>
+                <h2>$188.000</h2>
+            </div>
+            <h4>cuotas</h4>
+            <select name="input" id="" val aria-placeholder="seleccionar cuotas">
+                <option value="0">Seleccionar cuotas</option>
+                <option value="1">3 cuotas de</option>
+                <option value="2">6 cuotas de</option>
+                <option value="3">9 cuotas de</option>
+                <option value="4">12 cuotas de</option>
+            </select>
+        </div>
+        <div class="etiquetas">
+            <p><i class="fas fa-credit-card"></i>metodos de pago</p>
+            <p class="etiqueta2"><i class="fas fa-truck"></i>envios a todo el pais</p>
+            <a href="">calcular costo de envio</a>
+            <p><i class="fas fa-shield-alt"></i>compra segura</p>
+        </div>
+        <div class="etiquetas-desktop">
+            <p><i class="fas fa-credit-card"></i>metodos de pago</p>
+            <p class="etiqueta2"><i class="fas fa-truck"></i>envios a todo el pais</p>
+            <a href="">calcular costo de envio</a>
+            <p><i class="fas fa-shield-alt"></i>compra segura</p>
+        </div>
+        <a href="">calcular costo de envio</a>
+    </div>    
+
+    <%- include("partials/footer.ejs") %>
+    <script src="/javaScripts/carritoDeCompra.js" defer></script>
+</body>
+</html>

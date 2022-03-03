@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sm4rtTech</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+</head>
+
+<body class="admin">
+    <%- include('./partials/headerAdmin.ejs') %>
+        <main class="admin">  
+            <%- include('./partials/navAdmin.ejs') %>
+                <section class="formAdmin">
+
+                    <section class="caja-central-form">
+                        <h2>EDITAR PRODUCTO</h2>
+                        <form id="formEditProduct" action="/admin/editar/<%= product.id%>?_method=PUT" method="POST"
+                            enctype="multipart/form-data">
+                            <section class="datos-usuarios">
+                                <div>
+                                    <h4>Categorias</h4>
+                                    <select name="category" id="">
+                                        <% categorias.forEach(categoria => { %> 
+                                            <option value="<%= categoria.id %>" <%= locals.old && old.categoria == categoria.id ? "selected" : product.category.id == categoria.id ? "selected" : "" %>><%= categoria.category %></option>
+                                        <% }) %> 
+                                    </select>
+                                </div>
+                                <div>
+                                    <h4>Marcas</h4>
+                                    <select name="marca" id="">
+                                        <option selected hidden>Marca...</option>
+                                        <% marcas.forEach(marca => { %> 
+                                        <option value="<%= marca.brand_id %>" <%= locals.old && old.marca == marca.brand_id ? "selected" : marca.brand_id == product.brand_id ? "selected" : "" %>><%= marca.brand %> </option>
+                                        <% }) %> 
+                                    </select>
+                                    <% if (locals.errors && errors.marca) { %>
+                                        <small class="text-danger"><%= errors.marca.msg %> </small>
+                                    <% } %>
+                                </div>
+                                <div>
+                                    <h4>Precio</h4>
+                                    <input class="input-style" type="text" id="price" name="price"
+                                        value="<%= locals.old ? old.price: product.price%>" autocomplete="off">
+                                    <% if (locals.errors && errors.price) { %>
+                                        <!-- busca en las variables de nuestra aplicacion -->
+                                        <small class="text-danger">
+                                            <%= errors.price.msg %>
+                                        </small>
+                                        <% } %>
+                                </div>
+                                <div class="name">
+                                    <h4>Nombre del producto</h4>
+                                    <input id="name" class="input-style" type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : product.name%>" autocomplete="off">
+                                        <% if (locals.errors && errors.name) { %>
+                                            <small class="text-danger"><%= errors.name.msg %> </small>
+                                        <% } %>
+                                </div>
+                                <div>
+                                    <h4>Tamaño de pantalla</h4>
+                                    <select name="tamaño" id="">
+                                        <option value="">Seleccionar</option>
+                                        <% tamaños.forEach(tamaño => { %> 
+                                            <option value="<%= tamaño.size_id %>" <%= locals.old && old.tamaño == tamaño.size_id ? "selected" : tamaño.size_id == product.sizes[0]?.size_id ? `selected` : "" %>><%= tamaño.sizes %> </option>
+                                        <% }) %> 
+                                    </select>
+                                </div>
+                                <div>
+                                    <h4>Smart</h4>
+                                    <select name="smart" id="">
+                                        <option value="">Seleccionar</option>
+                                        <option value="Si" <%= locals.old && old.smart == "Si" ? "selected"
+                                        : "Si" == product.smart ? `selected` : "" %>>Si</option>
+                                        <option value="No"  <%= locals.old && old.smart == "No" ? "selected"
+                                        : "No" == product.smart ? `selected` : "" %>>No</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <h4>Capacidad</h4>
+                                    <select name="capacity" id="">
+                                        <option value="">Seleccionar</option>
+                                        <% capacidades.forEach(capacidad => { %> 
+                                        <option value="<%= capacidad.capacity_id %>" <%= locals.old && old.capacity == product.capacities[0].capacity_id ? "selected"
+                                        : capacidad.capacity_id == product.capacities[0]?.capacity_id ? `selected` : "" %>><%= capacidad.capacity %> </option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                                <div class="apellido">
+                                    <h4>RAM</h4>
+                                    <select name="ram" id="">
+                                        <option selected value="">Seleccionar</option>
+                                        <% rams.forEach(ram => { %> 
+                                            <option value="<%= ram.ram_id %>" <%= locals.old && old.ram == product.rams[0]?.ram_id ? "selected"
+                                            : ram.ram_id == product.rams[0]?.ram_id ? `selected` : "" %>><%= ram.ram %> </option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                                <div class="apellido">
+                                    <h4>Color</h4>
+                                    <select name="color" id="color">
+                                        <option selected value="">Seleccionar</option>
+                                        <% colores.forEach(color => { %>
+                                            <option value="<%= color.color_id %>" <%= locals.old && old.color == product.colores[0]?.color_id ? "selected"
+                                                : color.color_id == product.colores[0]?.color_id ? `selected` : "" %>><%= color.color %> </option>
+                                        <% }) %>
+                                    </select>
+                                </div>
+                                <section class="img-coment">
+                                    <div>
+                                        <h4>Imagenes</h4>
+                                        <input class="input-file" type="file" multiple="" name="image" id="image">
+                                        <div class="imagePrev-box">
+                                            <img id="imagenPrevisualizacion" src="/images/products/<%= product.images[0]?.image %>">
+                                        </div>
+                                </div>
+                                    <h4>descripción</h4>
+                                    <textarea name="description" id="description" cols="30" rows="10"><%= locals.old ? old.description : product.description %></textarea>
+                                    <% if (locals.errors && errors.description) { %>
+                                        <!-- busca en las variables de nuestra aplicacion -->
+                                        <small class="text-danger">
+                                            <%= errors.description.msg %>
+                                        </small>
+                                        <% } %>
+                                </section>
+
+                            </section>
+                            <div id="darken" style="display: none;">
+                                <div id="redireccion">
+                                    <input type="text" name="redireccion" id="redireccionar" value="" style="display: none;">
+                                    <button class="redirect" name="ignorar" value="detalle">Ir al detalle de producto</button>
+                                    <button class="redirect" name="ignorar" value="seguir">Seguir editando productos</button>
+                                </div>
+                            </div>
+                            <div class="botones-confirm">
+                                <section class="button-crear">
+                                    <button type="submit" class="guardar" cursor="pointer">guardar</button>
+                                    <span class="error-message">Credenciales inválidas</span>
+                                    <small class="text-danger" id="submitErrors"></small>
+                                </section>
+
+
+                            </div>
+                        </form>
+                        <section class="button-crear">
+                            <button type="submit" class="quitar" id="borrar">eliminar producto</button>
+                            <!-- <form action="/admin/delete/<%= product.id %>" method="GET">
+                            </form> -->
+                        </section>
+                        <div class="modal-background">
+                            <div class="modal">
+                                <h2>¿ESTAS SEGURO QUE DESEAS ELIMINAR ESTE PRODUCTO?</h2>
+                        <form id="form" action="/admin/delete/<%= product.id %>" method="GET">
+                            <section class="button-eliminar-profile">
+                                <button type="submit" id="delete" class="button-eliminar">Eliminar producto</button>
+                            </section>
+                        </form>
+                        <button id="cancel">Cancelar</button> 
+                    </div>
+                    </div>
+                    </section>
+        </main>
+     
+        <script src="/javaScripts/imagenPrev.js" defer></script>
+        <script src="/javaScripts/editProductValidatorFront.js" defer></script>
+        <script src="/javaScripts/editProfileEliminar.js" defer></script>
+</body>
+
+</html>

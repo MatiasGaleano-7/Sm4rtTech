@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Sm4rtTech</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>   
+</head>
+<body id="admin" class="admin">
+    <%- include('./partials/headerAdmin.ejs') %> 
+    <main class="admin">
+        <%- include('./partials/navAdmin.ejs') %>
+        <section class="sectionInicio">
+            <div class="row">
+                <div class="cardAdmin">
+                    <a href="/admin/agregar">
+                    <h3>Agregar productos</h3>
+                    <img src="/images/cart-admin.png" alt="">
+                </a>
+                </div>
+                <div class="cardAdmin">
+                    <a href="/admin/editar">
+                    <h3>Editar productos</h3>
+                    <img src="/images/edit--admin.png" alt="">
+                </a>
+                </div>
+                <div class="cardAdmin">
+                    <a href="/admin/team">
+                    <h3>Equipo de trabajo</h3>
+                    <img src="/images/admin-equipo.jpg" alt="">
+                </a>
+                </div>
+            </div>
+            <div class="row">
+        </section>
+    </main>
+</body>
+</html>

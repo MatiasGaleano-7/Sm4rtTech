@@ -1,0 +1,294 @@
+.detalle {
+    margin: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detalle p {
+    border-bottom: 2px solid #00A99D;
+}
+
+.detalle a {
+  text-align: left;  
+  color: var(--lightBlue);
+  text-decoration: none;
+  text-transform: capitalize;
+  margin: 0 0.5rem;
+}
+
+.detalle .editDetalle {
+    background-color: var(--greenWater);
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    transition: all .3s;
+    text-transform: uppercase;
+}
+
+.detalle .editDetalle:hover {
+    background-color: #019086;
+    border: 1px solid black;
+}
+
+.imagen-principal {
+    padding: 5px;    
+}
+.imagen-principal img {
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+    border-radius: 15px;
+    padding: 5px;
+}
+.imagenes .imagen-1 {
+    display: flex;
+    justify-content: center;
+}
+.imagen-1 img {
+    width: 30%;
+    max-width: 150px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+}
+.box-1 {
+    background-color: var(--grey);
+    padding: 10px;
+    margin: 10px;
+}
+.box-1 .botones {
+    display: flex;
+    flex-direction: column;
+
+}
+.box-1 .botones .boton1 {
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--greenWater);
+    border-color: var(--darkWaterGreen);
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2rem;
+    margin: 5px 0;
+
+}
+.box-1 .botones .boton2 {
+    text-transform: uppercase;
+    color: var(--lightBlue);
+    background-color: white;
+    border-color: var(--lightBlue);
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2rem;
+    margin: 5px 0;
+
+}
+.box-1 h4 {
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+.box-1 .selecciona-cuotas {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    font-size: 1rem;
+    
+}
+.etiquetas p {
+    width: 100%;
+    margin: 2rem 0 10px 0;
+    font-weight: 500; 
+    text-transform: uppercase;
+}
+.etiquetas a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--lightBlue);
+    width: 100%;
+    display: inline-block;
+    font-size: 13px;
+}
+.especificaciones {
+    margin: 10px;
+}
+.tabla-especificaciones{
+    background-color: var(--greenWater);
+    min-height: 100px;
+    text-transform: capitalize;
+    text-align: center;
+    border-collapse: collapse;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    font-weight: 500;
+    width: 100%;
+}
+.tabla-especificaciones tr{
+    height: 3.5rem;
+}
+.tabla-especificaciones tr:nth-child(odd) {
+    background-color: var(--darkWaterGreen);
+}
+
+.tabla-especificaciones td{
+    width: 50%;
+}
+.especificaciones  h4 {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.especificaciones-tecnicas {
+    margin: 1.5rem 0;
+}
+.especificaciones-tecnicas ul li {
+    list-style: none;
+
+}
+.recomendaciones {
+    margin: 10px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.recomendaciones h2 {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.productos-recomendados{
+    display: flex;
+    justify-content: center;
+}
+    
+.productos-recomendados a {
+    width: 100%;
+    display: flex;
+    background-color: var(--greenWater);
+    margin-bottom: 1rem;
+    border-radius: 0.6rem;
+    min-height: 125px;
+    align-items: center;
+    justify-content: space-around;
+    text-decoration: none;
+    color: black;
+}
+
+.productos-recomendados a .img-recomendado{
+    display: flex;
+    width: 35%;
+    justify-content: center;
+}
+.productos-recomendados a img {
+    max-width: 100%;
+    max-height: 110px;
+    border-radius: 5px;
+}
+
+.productos-recomendados .nombre {
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    flex-direction: column;
+}
+.productos-recomendados .nombre h3{
+    font-size: 0.9rem;
+}
+.recomendaciones .ver-mas {
+    color: var(--lightBlue);
+}
+@media (min-width: 768px){
+    .box-1 .botones .boton1 {
+        height: 3rem;
+        font-size: 2rem;
+    } 
+    .box-1 .botones .boton2 {
+        height: 3rem;
+        font-size: 2rem;
+    } 
+    .box-1 .nombre-producto {
+        display: inline-block;
+        flex-direction: column;
+    }
+    .etiquetas p {
+        text-align: center;
+        font-size: 20px;
+    }
+    .etiquetas a {
+        font-weight: 700;
+    }
+    .productos-finales {
+        justify-content: space-between;
+        display: flex;
+    }
+    .productos-recomendados {
+        display: inline-block;
+        width: 30%;
+    }
+
+    .productos-recomendados a {
+        text-decoration: none;
+        color: black;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 250px;
+        max-height: 250px;
+        padding: 5px;
+    }
+
+    .productos-recomendados a .img-recomendado{
+        height: 70%;
+        width: 100%;
+    }
+
+    .productos-recomendados img {
+        min-height: 150px;
+    }
+
+    .productos-recomendados .nombre {
+        width: 100%;
+    }
+    .ver-mas a{
+        text-decoration: none;
+        color: var(--lightBlue);
+        cursor: pointer;
+    }
+
+    .ver-mas a:hover{
+        transition: all 0.2s ease;
+        border-bottom: 2px solid var(--lightBlue);
+    }
+    
+}
+@media (min-width: 992px) {
+    .detalle {
+        margin: 20px;
+    }
+    .imagen-principal img {
+        margin: 0 0 10px 15px;
+    }
+    .imagenes {
+        width: 65%;
+        display: inline-block;
+    }
+    .box-1 {
+        width: 30%;
+        float: right;
+    }
+    .box-1 .botones .boton2 {
+        font-size: 20px;
+    }
+    .box-1 .nombre-producto h3 {
+        margin: 10px 0;
+    }
+    .etiquetas p {
+        text-align: left;
+    }
+    .especificaciones {
+        margin: 20px;
+    }
+    .recomendaciones {
+        margin: 20px;
+    }
+    .recomendaciones .ver-mas {
+        margin: 10px 0;
+    }
+
+}

@@ -1,0 +1,93 @@
+<header>
+    <div class="main-header">
+
+        <a href="/" class="logo">
+            <img src="/images/logo-sm4rttech.png" alt="">
+        </a>
+
+        <!-- buscador -->
+        <form action="/products/search" method="GET" class="search-form-mobile" id="search">
+            <div class="search-bar">
+              
+                <input type="search" name="buscar" id="input-search" placeholder="Buscar productos" autocomplete="off">
+                <button type="submit"><i class="fas fa-search"></i></button>
+       
+            </div>
+            <div class="cat-tablet">
+            <ul class="categorías">
+                <li class="dropdown-menu" onclick="dropSubCategoryMenu()">
+                    <a href="/products">productos</a>
+                </li>
+                <% categories.forEach(category => { %> 
+                    <li class="dropdown-menu">
+                        <a href="/products/category/<%= category.id %>"><%= category.category %></a>
+                    </li>
+                <% }) %> 
+            </ul>
+        </div>
+        </form>
+        <div class="iconos">
+            <i class="fas fa-bars burguer-menu-icon" onclick="dropMenu()"></i>
+        </div>
+        <div class="cat" id="navigation-bar-mobile">
+            <div class="user-icons-mobile">
+                <% if( locals.user != "") {%>
+                    <span class="nav-header-user" onclick="dropAvatarMenu()">
+                        <i class="fas fa-user"></i>
+                        <i class="fas fa-angle-down" ></i>
+                    </span>
+                    
+                    <div id="menu-avatar">
+                        <% if (locals.user.rol === 2 || locals.user.rol === 3) {%> 
+                            <a href="/admin">Ir al Admin</a>
+                        <% } %>
+                        <a href="/accounts/profile">Mis datos</a>
+                        <a href="/accounts/logout">Cerrar sesion</a>
+                    </div>
+                <% } else {%>
+                    <a href="/accounts/login"><i class="fas fa-user"></i></a>
+                <% } %> 
+                <a href="/carritoDeCompra"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <ul class="categorías">
+                <li class="dropdown-menu" onclick="dropSubCategoryMenu()">
+                    <a href="/products">PRODUCTOS</a>
+                </li>
+                <% categories.forEach(category => { %> 
+                    <li class="dropdown-menu">
+                        <a href="/products/category/<%= category.id %>"><%= category.category %></a>
+                    </li>
+                <% }) %> 
+            </ul>
+        </div>
+        <div class="logeo">
+            <% if( locals.user != "") {%> 
+                <div class="nav-header-user" onclick="dropAvatarMenu()">
+                    <span class="header-avatar">
+                        <span class="nav-header-avatar-user"><img src="./images/<%= locals.user.avatar %>" alt="" ></span>
+                        <span class="nombre-usuario" ><%= locals.user.name  %> </span>
+                        <i class="fas fa-angle-down" ></i>
+                    </span>
+                    <div id="menu-avatar">
+                        <% if (locals.user.rol === 2 || locals.user.rol === 3) {%> 
+                            <a href="/admin">Ir al Admin</a>
+                        <% } %> 
+                        <a href="/accounts/profile">Mis datos</a>
+                        <a href="/accounts/logout">Cerrar sesion</a>
+                    </div>
+                    
+                </div>
+            <% } else {%> 
+                <nav class="options">
+                    <span><a href="/accounts/login">inicia sesion</a>
+                    <span><a href="/accounts/register">registrate</a>
+                </nav>
+            <% } %> 
+            <nav class="iconos-desktop">
+                <a href="/carritoDeCompra"><i class="fas fa-shopping-cart"></i></a>
+            </nav>
+        </div>
+
+    </div>
+    <script src="/javaScripts/searchHeader.js" defer></script>
+</header>

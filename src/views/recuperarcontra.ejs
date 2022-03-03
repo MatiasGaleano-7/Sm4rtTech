@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Recuperar contraseña</title>
+</head>
+<body>
+    <%- include("partials/header-formularios.ejs") %> 
+    <main class="formulario-reg">
+        <section class="caja-central-form">
+            <h2>RECUPERAR CONTRASEÑA</h2>
+            <section class="datos-usuarios">
+                    <div class="name">
+                        <h4>e-mail</h4>
+                        <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                        <span class="error-message">Debe ingresar su email</span>
+                    </div>
+            </section>
+        <section class="button-crear">
+            <button type="submit" class="registrar">enviar</button>
+            <span class="error-message">Credenciales inválidas</span>                            
+        </section>
+            <div class="vuelta-login">
+                <a href="/accounts/login"><h4>volver a intentar</h4></a>
+            </div>
+        </section>
+</main>
+            <%- include("partials/footer.ejs") %> 
+</body>
+</html>

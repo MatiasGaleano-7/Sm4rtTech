@@ -1,0 +1,796 @@
+body::-webkit-scrollbar {
+    width: .9rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(71, 141, 125);
+    border-radius: 100px;
+    border: 2px solid rgb(248, 248, 248);
+}
+
+body{
+    background-image: url('/images/M4-background.jpg');
+}
+button{
+    cursor: pointer;
+}
+
+/* ------------- Slider ------------- */
+
+main .carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+main .carousel ul.slider {
+    list-style: none;
+    width: 400%;
+    display: flex;
+    animation: cambio 30s infinite ease-in-out;
+} 
+
+.slider .inferior .description .description-carrousel{
+    height: 68px;
+    overflow: hidden;
+}
+/* #slide1 {
+    background-image: url(/images/carousel/lenovo-tablet-m7.jpg);
+}
+
+#slide2 {
+    background-image: url(/images/carousel/lg-k20.jpg);
+}
+
+#slide3 {
+    background-image: url(/images/carousel/galaxy-s6-edge.jpg);
+}
+
+#slide4 {
+    background-image: url(/images/carousel/lenovo-tablet-m7.jpg);
+} */
+
+#slide5 {
+    display: none;
+}
+
+#slide6 {
+    display: none;
+}
+
+main .carousel ul.slider li {
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 470px;
+}
+
+main .carousel ul.slider li a{
+    display: flex;
+    justify-content: center;
+}
+
+main .carousel ul.slider li a, 
+main .carousel ul.slider li .inferior{
+    position:relative;
+    z-index: 10;
+    color: white;
+}
+
+main .carousel ul.slider li img.img-carrousel{
+    max-width: 100%;
+    border-radius: 20px;
+    max-height: 300px;
+}
+
+main .carousel ul.slider li .inferior {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30%;
+}
+
+main .carousel ul.slider li .inferior i {
+    font-size: 2.2rem;
+}
+
+main .carousel ul.slider li .description {
+    padding: 0 1.2rem;
+}
+
+.box-filter {
+    position: absolute;
+    z-index: 1;
+    left: 0rem;
+    top: 0rem;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+@keyframes cambio {
+    0%{margin-left: 0%;}
+    24%{margin-left: 0%;}
+
+    29%{margin-left: -100%;}
+    59%{margin-left: -100%;}
+    
+    64%{margin-left: -200%;}
+    94%{margin-left: -200%;}
+
+    98%{margin-left: -300%;}
+    99.99999999999%{margin-left: -300%;}
+    
+    100%{margin-left: 0%;}
+}
+
+/* ------------- Fin Slider ------------- */
+
+
+/* ------------- Lo mas vendido ------------- */
+
+main div.top-sales {
+    display: flex;
+    width: 100%;
+    padding: 1.2rem 1rem 0;
+    flex-direction: column;
+}
+
+main div.top-sales h2 {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+main div.top-sales .articulos {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+}
+
+main div.top-sales article {
+    background-color: var(--greenWater);
+    height: 250px;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    max-width: 250px;
+}
+
+main div.top-sales article a{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    color: #000;
+    text-decoration: none;
+}
+
+.top-sales .product-img{
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+main div.top-sales article a img {
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 0.5rem;
+}
+
+.top-sales h3{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ------------- Fin lo mas vendido ------------- */
+
+
+/* ------------- DESTACADOS ------------- */
+
+ main .destacados {
+    padding: 0 0.5rem;
+}
+/*
+main .destacados h2 {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+*/
+.destacados .arriba .destacados-article,
+.destacados .abajo .producto {
+    display: flex;
+    justify-content: center;
+}
+.destacados .arriba a,
+.destacados .abajo a {
+    padding: 0.5rem;
+    background-color: var(--greenWater);
+    margin-bottom: 1rem;
+    border-radius: 0.6rem;
+    min-height: 100px;
+    max-height: 125px;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 450px;
+}
+.destacados .arriba a .img-destacados,
+.destacados .abajo a .img-destacados{
+    display: flex;
+    width: 35%;
+    height: 100%;
+    justify-content: center;
+}
+
+.destacados .arriba a img,
+.destacados .abajo a img{
+    max-width: 100%;
+}
+
+.destacados .arriba .description,
+.destacados .abajo .description{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.destacados .arriba .description h3,
+.destacados .abajo .description h3{
+    font-size: 0.9rem;
+}
+
+/* main .destacados article.producto {
+    width: 48%;
+} */
+
+main .destacados article a {
+    display: flex;
+    width: 100%;
+    color: #000;
+    text-decoration: none;
+}
+
+
+.destacados .producto-principal a{
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: var(--greenWater);
+    margin-bottom: 1rem;
+    border-radius: 0.6rem;
+}
+
+.producto-principal .product-img{
+    text-align: center;
+}
+
+.producto-principal .product-img img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.producto-principal a .description-principal{
+    text-align: center;
+}
+
+/* ------------- Fin DESTACADOS ------------- */
+
+
+/* ------------- OFERTAS ------------- */
+
+main .ofertas {
+    padding: 1.2rem 1rem 0;
+    width: 100%;
+}
+
+main .ofertas h2 {
+    padding: 0.5rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+/* main article.producto {
+    background-color: #EEE;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+} */
+
+main .ofertas article,
+main .ofertas h2 {
+    
+    border-bottom: 1px solid #B8B8B8;
+}
+
+main .ofertas a {
+    align-items: center;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    background-color:var(--greenWater);
+    height: 100%;
+    border-radius: 10px;
+    padding: 5px 0;
+}
+
+main .ofertas a .product-img {
+    width: 255px;
+    height: 255px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .ofertas a .product-img img {
+    max-width: 255px;
+    max-height: 255px;
+    border-radius: 0.4rem;
+}
+
+main .ofertas a .description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+main .ofertas a .description h3{
+    font-size: 1rem;
+}
+
+main .ofertas a .description div{
+    width: 75%;
+}
+
+.ofertas a .description label{
+    color: var(--lightBlue);
+    background-color: white;
+    border-radius: 20%;
+    padding: 2px;
+}
+
+a.ver-todas {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    color: var(--lightBlue);
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* ------------- FIN OFERTAS ------------- */
+/* --------------------------------------- */
+
+
+/* ------------------------------------------------- */
+/* ------------- MARCAS QUE TRABAJAMOS ------------- */
+
+main .marcas-partners {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #1D1D1D;
+    gap: 10px;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+main .marcas-partners h2{
+    width: 100%;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+main .marcas-partners .marca {
+    width: 45%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .marcas-partners .marca img {
+    max-width: 80%;
+    max-height: 70px;
+    filter: grayscale(1) brightness(0) invert(1) opacity(.5);
+
+}
+
+
+main .marcas-partners .marca img:hover {
+    filter: brightness(0) invert(.95) drop-shadow(0px 0px 4px rgb(102, 102, 102));
+    /* box-shadow: 0px 10px 10px -10px white; */
+}
+
+/* ------------- FIN MARCAS QUE TRABAJAMOS ------------- */
+/* ----------------------------------------------------- */
+
+
+
+
+/* -------------------------------------- */
+/* ------------- INFO FINAL ------------- */
+
+main .info-final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+main .info-final .info {
+    display: flex;
+    width: 240px;
+    padding: 1.5rem 0;
+    align-items: center;
+}
+
+main .info-final div p {
+    font-size: 1.1rem;
+    padding-left: 20px;
+}
+
+main .info-final div div {
+    width: 60px;
+    text-align: center;
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+main .info-final hr {
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #AFAFAF;
+}
+
+/* ------------- FIN INFO FINAL ------------- */
+/* ------------------------------------------ */
+
+
+
+
+
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+/* --------------- INICIO TABLET --------------- */
+/* --------------------------------------------- */
+/* --------------------------------------------- */
+
+@media screen and (min-width:769px) {  
+
+
+    /* ---------------------------------- */
+    /* ------------- Slider ------------- */
+
+    #slide5 {
+        display: block;
+    }
+
+    #slide6 {
+        display: block;
+    }
+
+    main div.carousel ul.slider {
+        display: flex;
+        justify-content: center;
+        width: 300%;
+        list-style: none;
+        animation: cambio 30s infinite ease-in-out;
+    }
+    
+    main div.carousel ul.slider li {
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgb(63, 63, 63);
+        color: white;
+    }
+    main div.carousel ul.slider li a {
+        width: 100%;
+        height: 70%;
+        align-items: center;
+    }
+    
+    main div.carousel ul.slider li a img{
+        border-radius: 1rem;
+    }
+    
+    main div.carousel ul.slider li .inferior {
+        width: 100%;
+    }
+    
+    
+    
+        @keyframes cambio {
+            0%{margin-left: -25%;}
+            25%{margin-left: -25%;}
+    
+            33%{margin-left: -75%;}
+            58%{margin-left: -75%;}
+                
+            66%{margin-left: -125%;}
+            91%{margin-left: -125%;}
+            
+            100%{margin-left: -175%;}
+        }
+ 
+
+    /* ------------- Fin Slider ------------- */
+    /* -------------------------------------- */
+
+
+
+
+
+    /* ------------- Lo mas vendido ------------- */
+    /* ------------------------------------------ */
+        
+    main div.top-sales .articulos {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    main div.top-sales{
+        margin-top: 2rem;
+    }
+
+
+    main div.top-sales .articulos article {
+        margin-right: 0;
+        width: 23%;
+    }
+    
+    .articulos .top-sales-article .product-img{
+        height: 70%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    /* ----------- Fin Lo mas vendido ----------- */
+    /* ------------------------------------------ */
+
+
+
+
+
+    /* ------------------------------------------ */
+    /* --------------- DESTACADO ---------------- */
+
+
+.articulos-destacados {
+    display: flex;
+    justify-content: space-around;
+}
+
+.articulos-destacados .arriba,
+.articulos-destacados .abajo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.destacados .arriba a .img-destacados,
+.destacados .abajo a .img-destacados{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+}
+
+.destacados .arriba .description,
+.destacados .abajo .description{
+    width: 100%;
+    text-align: center;
+}
+
+.articulos-destacados .producto-principal{
+    width: 35%;
+    display: flex;
+    align-items: center;
+}
+
+.destacados .arriba a, .destacados .abajo a{
+    max-height: 250px;
+    min-height: 250px;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+.destacados .arriba a img, .destacados .abajo a img {
+    max-height: 200px;
+    max-width: 100%;
+    border-radius: 5px;
+}
+.destacados .arriba .description h3, .destacados .abajo .description h3{
+    font-size: larger;
+}
+
+   /*  main .destacados h2 {
+        width: 100%;
+        text-align: center;
+    } */
+
+    /* main .destacados article.producto {
+        width: 285px;
+        height: 285px;
+        margin-bottom: 0;
+    } */
+    
+   /*  main .destacados {
+        margin: 4rem auto 0;
+    }
+
+    main .destacados section.articulos-destacados {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    main .destacados article.producto img {
+        max-width: 100%;
+        max-height: 126px;
+    }
+
+    main .articulos-destacados .producto-principal {
+        width: 600px;
+        height: 600px;
+        margin: 0 1rem;    
+    }
+
+    main .articulos-destacados .producto-principal a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;   
+    }
+    
+
+    main .articulos-destacados .producto-principal a .product-img {
+        width: 100%;
+        padding: 0;
+        height: 60%;
+    }
+
+    main .articulos-destacados .producto-principal a .description {
+        height: 40%;
+    }
+
+    main .articulos-destacados .producto-principal a .product-img img{
+        width: max-content;
+        max-height: 284px;
+        max-width: 100%;
+
+    }
+
+    main .destacados .izquierda,
+    main .destacados .derecha {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    main .destacados article.producto .description{
+        padding: 1rem 1rem 0;
+    }
+
+    */ 
+    
+    
+    /* ------------- Fin Destacados ------------- */
+    /* ------------------------------------------ */
+
+
+
+    /* ----------------- OFERTAS ---------------- */
+    main .ofertas article, 
+    main .ofertas h2 {
+        border-bottom: 0;
+    }
+
+    main div.ofertas .articulos {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    main .ofertas a .product-img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    main .ofertas a .product-img img {
+        max-width: 100%;
+        max-height: 160px;
+    }
+
+    main .ofertas a {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    main .ofertas a .description{
+        height: 30%;
+        justify-content: space-evenly;
+        margin-top: 0;
+    }
+
+    main div.ofertas .articulos article {
+        width: 23%;
+        border-radius: 1rem;
+    }
+
+    main div.ofertas a.ver-todas{
+        justify-content: flex-start;
+    }
+
+    main div.ofertas a.ver-todas p {
+        margin-right: 1rem;
+    }
+
+
+
+
+
+
+    /* PARTNERS */
+
+    main .marcas-partners h2 {
+        padding: 1rem 0 3rem 0;
+    }
+
+    main .marcas-partners .marca {
+        width: 23%;
+    }
+
+
+
+    /* INFO FINAL */
+    main div.info-final {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
+    main .info-final hr {
+        display: none;
+    }
+    
+    main .info-final div.info {
+        width: 33%;
+        display: flex;
+        justify-content: center;
+        padding: 3rem 0;
+    }
+
+
+
+
+
+
+
+
+
+
+}

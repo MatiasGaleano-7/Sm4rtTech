@@ -1,0 +1,206 @@
+body#listado-productos{
+    width: 100%;
+}
+
+main#listado-productos-desktop{
+    display: none;
+}
+
+main#listado-productos{
+    align-items: stretch;
+    width: 100%;
+    margin: 3rem auto;
+}
+
+main#listado-productos .filtros{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 150px;
+    padding:1rem;
+    margin-bottom: 1rem;
+    border-radius: .8rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.178);
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.103);
+}
+
+main#listado-productos .filtros h1{
+    font-weight: 500;
+}
+
+.botonFilter {
+    text-transform: uppercase;
+    color: white;
+    background-color: var(--greenWater);
+    border-color: var(--darkWaterGreen);
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2rem;
+    margin: 5px 0;
+}
+
+
+.buscado::first-letter{
+    text-transform: capitalize;
+}
+
+.lista-filtro {
+    display: none;
+    padding: 1rem;
+    text-transform: capitalize;
+}
+
+.lista-filtro h2{
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.filtro{
+    margin-top: 1rem;
+}
+
+.filtro dt{
+    font-weight: 500;
+}
+
+.filtro dd{
+    margin-top: .9rem;
+}
+
+.filtro input[type="checkbox"] {
+    display: none;
+}
+
+.filtro input[type="checkbox"]:checked + label{
+    background: rgba(5, 79, 94, 0.09);
+    border-bottom: 1.5px solid var(--greenWater);
+    border-radius: 5px;
+    transition: all .4s ease;
+}
+
+.filtro input[type="checkbox"]:checked + label:before{
+    background: var(--greenWater);
+    border: 1.8px solid #fff;
+    border-radius: 50%;    
+    transition: all .4s ease;
+}
+
+.filtro label{
+    /*color: var(--greenWater);*/
+    cursor: pointer;
+    position: relative;
+    padding: 5px 15px 5px 40px;
+    border-radius: .2rem;
+    border-bottom: 1.5px solid transparent;
+}
+
+.filtro label:before{
+    content: "";
+    width: .7rem;
+    height: .7rem;
+    display: inline-block;
+    background: none;
+    border: 1.8px solid var(--greenWater);
+    position: absolute;
+    left: .8rem;
+    top:.6rem;
+    transition: all .4s ease;
+}
+
+
+.listado {
+    display: flex;
+    flex-wrap: wrap;
+    height: fit-content;
+    justify-content: space-evenly;
+}
+
+.listado article.hide {
+    display: none;
+}
+
+.listado article.active {
+    display: flex;
+}
+
+.listado .producto{
+    display: flex;
+}
+
+.listado .producto a:hover{
+    box-shadow: 0px 0px 20px 4px rgba(141, 141, 141, 0.450);
+}
+
+.listado .producto a {
+    padding: 0.5rem;
+    background-color: var(--greenWater);
+    justify-content: center;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0px 0px 0px 0px rgba(141, 141, 141, 0.400);
+    transition: box-shadow .3s ease;
+    max-height: 400px;
+    text-decoration: none;
+    color: black;
+}
+
+.listado .producto .product-img{
+    width: 235px;
+    height: 235px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listado .producto img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.listado .producto .description {
+    padding: 0.5rem;
+}
+
+@media (min-width: 768px){
+    main#listado-productos{
+        display: none;
+    }
+    main#listado-productos-desktop{
+        display: flex;
+        margin: 2rem 0;
+        justify-content: space-around;
+    }
+
+    main#listado-productos-desktop .filtros{
+        max-width: 294px;
+        min-width: 150px;
+        width: 35%;
+        padding:1rem;
+        margin-bottom: 1rem;
+        border-radius: .8rem;
+        border-right: 1px solid rgba(0, 0, 0, 0.3);
+        box-shadow: 4px 5px 25px rgba(0, 0, 0, 25%);
+    }
+    
+    .listado .producto {
+        min-width: 250px;
+        max-width: 250px;
+        border-radius: .5rem;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        box-shadow: 0px 0px 0px 0px rgba(141, 141, 141, 0.400);
+        transition: box-shadow .3s ease;
+        max-height: 400px;
+    }
+
+    .listado{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    .lista-filtro{
+        display: inherit;
+    }
+}
